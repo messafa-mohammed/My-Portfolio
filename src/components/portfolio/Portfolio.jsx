@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import "./portfolio.scss";
-import {motion , useScroll , useSpring} from  'framer-motion'
+import {motion , useScroll , useSpring, useTransform} from  'framer-motion'
 
 const items = [
     {
       id: 1,
       title: "React.js E-commerce",
       image:
-        "https://www.pexels.com/photo/focus-photo-of-super-mario-luigi-and-yoshi-figurines-163036/",
+        "project00.jpg",
       description:
         "A simple e-commerce website built using React and Redux for state management.",
     },
@@ -15,7 +15,7 @@ const items = [
       id: 2,
       title: "Next.js E-commerce",
       image:
-        "https://www.pexels.com/photo/turned-on-red-and-green-nintendo-switch-371924/",
+        "project01.jpg",
       description:
         "A simple e-commerce website built using React and Redux for state management.",
     },
@@ -23,7 +23,7 @@ const items = [
       id: 3,
       title: "Vanilla JS App",
       image:
-        "https://www.pexels.com/photo/white-gaming-console-on-wooden-surface-275033/",
+        "project02.jpg",
       description:
         "A simple e-commerce website built using React and Redux for state management.",
     },
@@ -31,14 +31,36 @@ const items = [
       id: 4,
       title: "Flutter App",
       image:
-        "https://www.pexels.com/photo/red-and-white-tik-tak-toe-game-illustration-220051/",
+        "project03.jpg",
       description:
         "A simple e-commerce website built using React and Redux for state management.",
     },
   ];
 
   const Single = ({ item }) => {
-    return <section>{item.title}</section>;
+    const ref = useRef()
+    const {scrollYProgress} = useScroll({
+            target:ref, 
+            // offset:["start start","end start"]
+            
+        })
+        const y = useTransform(scrollYProgress,[0,1],[-300,250]);
+    return <section>
+                <div className="container">
+                    <div className="wrapper">
+                        <div className="imageContainer" ref={ref}>
+                            <img src={item.image} alt="project image" />
+                        </div>
+                        
+                    <motion.div className="textContainer" style={{y}} >
+                        <h2 >{item.title}</h2>
+                        <p>{item.description}</p>
+                        <button>See Demo</button>
+                    </motion.div>
+                    </div>
+                    
+                </div>
+           </section>;
   };
 
 
