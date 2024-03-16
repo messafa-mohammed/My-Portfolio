@@ -9,7 +9,11 @@
   z-index: 999;
   
 
-  // @include mobile{
-  //   display: none;
-  // }
+  @include mobile{
+    display: none;
+  }
+  @include mobilepocket{
+    display: none;
+  }
+  
 }
