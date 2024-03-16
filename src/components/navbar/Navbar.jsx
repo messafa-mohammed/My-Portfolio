@@ -14,11 +14,11 @@ const Navbar = () => {
             transition={{duration:0.5}}
             >Piuma Nera</motion.span>
         <div className="social">
-            <a href="#"><img src="/facebook.png" alt="" /></a>
-            <a href="#"><img src="/instagram.png" alt="" /></a>
-            <a href="#"><img src="/threads.png" alt="" /></a>
-            <a href="#"><img src="/twitter.png" alt="" /></a>
-            <a href="#"><img src="/github.png" alt="" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61555952563633"><img src="/facebook.png" alt="facebook pic" /></a>
+            <a href="https://www.instagram.com/piuma.neraa?igsh=MXYwMmY3cTV2Z2dvZQ=="><img src="/instagram.png" alt="instagram oic" /></a>
+            <a href="https://www.threads.net/@piuma.neraa"><img src="/threads.png" alt="thread pic" /></a>
+            <a href="https://x.com/Messafa_Mohamed?t=I0rdzh6Dgz8ujmNylM75mQ&s=09"><img src="/twitter.png" alt="x pic" /></a>
+            <a href="https://github.com/messafa-mohammed"><img src="/github.png" alt="github pic" /></a>
         </div>
       </div>
     </div>

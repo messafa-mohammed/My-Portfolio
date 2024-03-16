@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -31,10 +31,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        "service_7i89wec",
+        "template_fkocu7n",
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        "Ln-SLEF15dyx_JB_g"
       )
       .then(
         (result) => {
@@ -106,8 +106,8 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
+          <input type="text" required placeholder="Name" name="from_name"/>
+          <input type="email" required placeholder="Email" name="gmail"/>
           <textarea rows={8} placeholder="Message" name="message"/>
           <button>Submit</button>
           {error && "Error"}
